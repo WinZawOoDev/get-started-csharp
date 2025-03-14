@@ -31,9 +31,45 @@ class Program
 
 
         //Numbers, Intergers
-        int a = 2100000000;
-        int b = 2100000000;
-        long c =  (long)a + (long)b;
+        // int a = 2100000000;
+        // int b = 2100000000;
+        // long c =  (long)a + (long)b;
+        // Console.WriteLine(c);
+
+        //Numbers, Precisions
+        // double a = 42.1;
+        // double b = 43.2;
+        // double c = checked(a + b);
+        // Console.WriteLine(c);
+
+        // int a = 18;
+        // int b = 6;
+        // int c = a + b;
+        // int d = (a + b) * c;
+        // int e = (a + b) - d * c + (12 * 4) / 3 + 12;
+        // Console.WriteLine(c);
+        // Console.WriteLine(e);
+
+        // int a = 7;
+        // int b = 4;
+        // int c = 3;
+        // int d = (a + b) / c;
+        // int e = (a + b) % c;
+        // Console.WriteLine($"quotient: {d}");
+        // Console.WriteLine($"remainder: {e}");
+
+        // int max = int.MaxValue;
+        // int min = int.MinValue;
+        // Console.WriteLine($"The range of integers is {min} to {max}");
+
+        // double a = 42.1; //neutral type
+        // float b = 38.2F;
+        // double c = a + b;
+        // Console.WriteLine(c);
+
+        decimal a = 42.1M; // explicit type 
+        decimal b = 38.2M;
+        decimal c = a + b;
         Console.WriteLine(c);
 
 
