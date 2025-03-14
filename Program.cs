@@ -67,19 +67,25 @@ class Program
         // double c = a + b;
         // Console.WriteLine(c);
 
-        decimal a = 42.1M; // explicit type 
-        decimal b = 38.2M;
-        decimal c = a + b;
-        // Console.WriteLine(c);
+        // decimal a = 42.1M; // explicit type 
+        // decimal b = 38.2M;
+        // decimal c = a + b;
+        // // Console.WriteLine(c);
 
-        bool myTest = a > b;
-        if (myTest)
-        {
-            Console.WriteLine("a is greater than b");
-        }
-        else
-        {
-            Console.WriteLine("b is greater than a");
+        // bool myTest = a > b;
+        // if (myTest)
+        // {
+        //     Console.WriteLine("a is greater than b");
+        // }
+        // else
+        // {
+        //     Console.WriteLine("b is greater than a");
+        // }
+
+        int counter = 0;
+        while(counter < 5){
+            Console.WriteLine($"Hello World! The counter is {counter}");
+            counter++;
         }
 
 
