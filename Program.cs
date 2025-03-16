@@ -109,6 +109,8 @@ class Program
         //     "Jacks"
         // };
 
+        // names.Sort();
+
         // for (int i = 0; i < names.Count; i++)
         // {
         //     Console.WriteLine($"Hello {names[i].ToLowerInvariant()}");
@@ -120,23 +122,30 @@ class Program
         //     Console.WriteLine(item);
         // }
 
-        var products = new string[]
-        {
-            "TV",
-            "Phone",
-            "PC",
-        };
+        // var products = new string[]
+        // {
+        //     "TV",
+        //     "Phone",
+        //     "PC",
+        // };
 
-        products = [..products, "Tablet"];
+        // products = [..products, "Tablet"];
 
-        foreach (var product in products[1..4])
-        {
-            Console.WriteLine($"The product is {product.ToUpper()}");
-        }
+        // foreach (var product in products[1..4])
+        // {
+        //     Console.WriteLine($"The product is {product.ToUpper()}");
+        // }
 
         // System.Console.WriteLine(products[0]);
         // System.Console.WriteLine(products[^1]);
 
+        var numbers = new List<int>{100, 50, 30, 40, 15, 20, 99, 150};
+        System.Console.WriteLine($"I found number 99 at index {numbers.IndexOf(99)}");
+        numbers.Sort();
+        System.Console.WriteLine($"I found number 99 at index {numbers.IndexOf(99)}");
+        foreach(var number in numbers){
+            Console.WriteLine(number);
+        }
 
     }
 }
