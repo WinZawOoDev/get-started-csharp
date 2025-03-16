@@ -172,8 +172,17 @@ class Program
         orderby score descending
         select $"The score is {score}";
 
+        List<string> myScores = scoreQuery.ToList();
+
         //Execute Query
-        foreach (var s in scoreQuery)
+        foreach (var s in myScores)
+        {
+            Console.WriteLine(s);
+        }
+
+        var scoreQuery2 = scores.Where(score => score > 60).OrderByDescending(s => s);
+
+        foreach (var s in scoreQuery2)
         {
             Console.WriteLine(s);
         }
