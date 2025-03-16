@@ -1,4 +1,6 @@
-﻿namespace HelloWorld;
+﻿using System.Security.Cryptography;
+
+namespace HelloWorld;
 
 class Program
 {
@@ -88,16 +90,35 @@ class Program
         //     counter++;
         // }
 
-        for (int i = 0; i < 5; i++)
-        {
-            if (i == 3)
-            {
-                Console.WriteLine(i);
-            }
+        // for (int i = 0; i < 5; i++)
+        // {
+        //     if (i == 3)
+        //     {
+        //         Console.WriteLine(i);
+        //     }
 
-            Console.WriteLine($"Hello World! The counter is {i}");
+        //     Console.WriteLine($"Hello World! The counter is {i}");
+        // }
+
+        // var names = new List<string>
+        // {
+        //     "David",
+        //     "Maria",
+        //     "Dammys",
+        //     "Sotty",
+        //     "Jacks"
+        // };
+        
+        // for (int i = 0; i < names.Count; i++)
+        // {
+        //     Console.WriteLine($"Hello {names[i].ToLowerInvariant()}");
+        // }
+
+        List<int> fibonacciNumbers = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100];
+        fibonacciNumbers.RemoveAt(3);
+        foreach(var item in fibonacciNumbers){
+            Console.WriteLine(item);
         }
-
 
     }
 }
