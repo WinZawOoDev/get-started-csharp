@@ -82,10 +82,20 @@ class Program
         //     Console.WriteLine("b is greater than a");
         // }
 
-        int counter = 0;
-        while(counter < 5){
-            Console.WriteLine($"Hello World! The counter is {counter}");
-            counter++;
+        // int counter = 0;
+        // while(counter < 5){
+        //     Console.WriteLine($"Hello World! The counter is {counter}");
+        //     counter++;
+        // }
+
+        for (int i = 0; i < 5; i++)
+        {
+            if (i == 3)
+            {
+                Console.WriteLine(i);
+            }
+
+            Console.WriteLine($"Hello World! The counter is {i}");
         }
 
 
