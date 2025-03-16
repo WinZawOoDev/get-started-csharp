@@ -151,44 +151,71 @@ class Program
         /**************  LINQ *****************/
 
         //Define Datasources
-        int[] scores = [2, 97, 92, 81, 60, 58, 95];
+        // int[] scores = [2, 97, 92, 81, 60, 58, 95];
 
-        Console.WriteLine("Scores greater than 60 by Imperative(Navie) Way");
-        Console.WriteLine("------------------------------");
-        for (int i = 0; i < scores.Length; i++)
-        {
-            if (scores[i] > 60)
-            {
-                Console.WriteLine(scores[i] + " ");
-            }
-        }
+        // Console.WriteLine("Scores greater than 60 by Imperative(Navie) Way");
+        // Console.WriteLine("------------------------------");
+        // for (int i = 0; i < scores.Length; i++)
+        // {
+        //     if (scores[i] > 60)
+        //     {
+        //         Console.WriteLine(scores[i] + " ");
+        //     }
+        // }
 
-        Console.WriteLine("Scores greater than 60 by Declarative Way");
-        Console.WriteLine("------------------------------");
-        //Define Query Expressions
-        IEnumerable<string> scoreQuery = 
-        from score in scores 
-        where score > 60 
-        orderby score descending
-        select $"The score is {score}";
+        // Console.WriteLine("Scores greater than 60 by Declarative Way");
+        // Console.WriteLine("------------------------------");
+        // //Define Query Expressions
+        // IEnumerable<string> scoreQuery = 
+        // from score in scores 
+        // where score > 60 
+        // orderby score descending
+        // select $"The score is {score}";
 
-        List<string> myScores = scoreQuery.ToList();
+        // List<string> myScores = scoreQuery.ToList();
 
-        //Execute Query
-        foreach (var s in myScores)
-        {
-            Console.WriteLine(s);
-        }
+        // //Execute Query
+        // foreach (var s in myScores)
+        // {
+        //     Console.WriteLine(s);
+        // }
 
-        var scoreQuery2 = scores.Where(score => score > 60).OrderByDescending(s => s);
+        // var scoreQuery2 = scores.Where(score => score > 60).OrderByDescending(s => s);
 
-        foreach (var s in scoreQuery2)
-        {
-            Console.WriteLine(s);
-        }
+        // foreach (var s in scoreQuery2)
+        // {
+        //     Console.WriteLine(s);
+        // }
 
-        int scoreCount = scoreQuery.Count();
-        Console.WriteLine($"Number of scores greater than 60: {scoreCount}");
+        // int scoreCount = scoreQuery.Count();
+        // Console.WriteLine($"Number of scores greater than 60: {scoreCount}");
+
+        var p1 = new People("David", "Ogbonna", new DateOnly(1990, 12, 25));
+        var p2 = new People("Maria", "Ogbonna", new DateOnly(1990, 12, 25));
+
+        List<People> peoples = [p1, p2];
+
+        System.Console.WriteLine(peoples.Count);
 
     }
 }
+
+class People(string first, string last, DateOnly dob)
+{
+    private string FirstName { get; } = first;
+    private string LastName { get; } = last;
+    private DateOnly DoB { get; } = dob;
+}
+
+// class People{
+//     private string firstName;
+//     private string lastName;
+//     private DateOnly dateOfBirth;
+
+//     public People(string firstName, string lastName, DateOnly dateOfBirth){
+//         this.firstName = firstName;
+//         this.lastName = lastName;
+//         this.dateOfBirth = dateOfBirth;
+//     }
+
+// }
