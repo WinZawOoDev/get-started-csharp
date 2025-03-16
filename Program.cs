@@ -1,5 +1,4 @@
-﻿using System.Security.Cryptography;
-
+﻿
 namespace HelloWorld;
 
 class Program
@@ -152,7 +151,7 @@ class Program
         /**************  LINQ *****************/
 
         //Define Datasources
-        int[] scores = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100];
+        int[] scores = [2, 97, 92, 81, 60, 58, 95];
 
         Console.WriteLine("Scores greater than 60 by Imperative(Navie) Way");
         Console.WriteLine("------------------------------");
@@ -167,12 +166,20 @@ class Program
         Console.WriteLine("Scores greater than 60 by Declarative Way");
         Console.WriteLine("------------------------------");
         //Define Query Expressions
-        IEnumerable<int> scoreQuery = from score in scores where score > 60 select score;
+        IEnumerable<string> scoreQuery = 
+        from score in scores 
+        where score > 60 
+        orderby score descending
+        select $"The score is {score}";
+
         //Execute Query
-        foreach (var i in scoreQuery)
+        foreach (var s in scoreQuery)
         {
-            Console.WriteLine(i + " ");
+            Console.WriteLine(s);
         }
+
+        int scoreCount = scoreQuery.Count();
+        Console.WriteLine($"Number of scores greater than 60: {scoreCount}");
 
     }
 }
