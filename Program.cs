@@ -1,4 +1,8 @@
 ﻿
+using System.Dynamic;
+using System.Security.Cryptography;
+using System.Security.Cryptography.X509Certificates;
+
 namespace HelloWorld;
 
 class Program
@@ -193,9 +197,22 @@ class Program
         var p1 = new People("David", "Ogbonna", new DateOnly(1990, 12, 25));
         var p2 = new People("Maria", "Ogbonna", new DateOnly(1990, 12, 25));
 
+        p1.Pets.Add(new Dog("Felix"));
+        p1.Pets.Add(new Cat("Kitty"));
+
+        p2.Pets.Add(new Dog("Jack"));
+        p2.Pets.Add(new Cat("Racon"));
+
         List<People> peoples = [p1, p2];
 
-        System.Console.WriteLine(peoples.Count);
+        foreach (var people in peoples)
+        {
+            Console.WriteLine($"{people} have:");
+            foreach (var pet in people.Pets)
+            {
+                Console.WriteLine($"a {pet.GetType().Name.ToLower()} {pet} that says {pet.MakeNoise()}");
+            }
+        }
 
     }
 }
@@ -205,6 +222,35 @@ class People(string first, string last, DateOnly dob)
     private string FirstName { get; } = first;
     private string LastName { get; } = last;
     private DateOnly DoB { get; } = dob;
+
+    public List<Pet> Pets { get; } = [];
+
+    public override string ToString()
+    {
+        return $"{FirstName} {LastName}";
+    }
+}
+
+abstract class Pet(string firstName)
+{
+    private string FirstName { get; } = firstName;
+    public abstract string MakeNoise();
+
+    public override string ToString()
+    {
+        return FirstName;
+    }
+}
+
+
+class Cat(string firstName) : Pet(firstName)
+{
+    public override string MakeNoise() => "Meow!";
+}
+
+class Dog(string firstName) : Pet(firstName)
+{
+    public override string MakeNoise() => "Woof!";
 }
 
 // class People{
