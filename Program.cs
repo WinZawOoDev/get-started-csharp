@@ -147,23 +147,32 @@ class Program
         //     Console.WriteLine(number);
         // }
 
-        
+
 
         /**************  LINQ *****************/
 
         //Define Datasources
         int[] scores = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100];
 
-        //Define Query Expressions
-        IEnumerable<int> scoreQuery = from score in scores where score > 60 select score;
-
-        //Execute Query
-        foreach(var i in scoreQuery){
-            Console.WriteLine(i + " ");
+        Console.WriteLine("Scores greater than 60 by Imperative(Navie) Way");
+        Console.WriteLine("------------------------------");
+        for (int i = 0; i < scores.Length; i++)
+        {
+            if (scores[i] > 60)
+            {
+                Console.WriteLine(scores[i] + " ");
+            }
         }
 
-
-
+        Console.WriteLine("Scores greater than 60 by Declarative Way");
+        Console.WriteLine("------------------------------");
+        //Define Query Expressions
+        IEnumerable<int> scoreQuery = from score in scores where score > 60 select score;
+        //Execute Query
+        foreach (var i in scoreQuery)
+        {
+            Console.WriteLine(i + " ");
+        }
 
     }
 }
